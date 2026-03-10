@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zeal Quest – Tựa game nhập vai RPG mobile đỉnh cao từ Zeal Game Studio. Khám phá thế giới Aethoria, chiến đấu PvP toàn cầu." />
+  <title>Zeal Quest – Fantasy Mobile RPG | Zeal Game Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/page.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar solid" id="navbar">
+  <div class="nav-c">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/zeal_logo.png" alt="Zeal Game Studio" class="logo-img" />
+      <span class="logo-txt">ZEAL<span class="logo-acc">GAME</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html"          class="nav-link" data-k="nav_home">Trang Chủ</a></li>
+      <li><a href="../index.html#about"    class="nav-link" data-k="nav_about">Về Chúng Tôi</a></li>
+      <li><a href="../index.html#products" class="nav-link" data-k="nav_products">Sản Phẩm</a></li>
+      <li><a href="zeal-quest.html"        class="nav-link active" data-k="nav_zealquest">Zeal Quest</a></li>
+      <li><a href="zealscan.html"          class="nav-link nav-zs" data-k="nav_zealscan">ZealScan</a></li>
+      <li><a href="../index.html#contact"  class="nav-link" data-k="nav_contact">Liên Hệ</a></li>
+    </ul>
+    <div class="nav-acts">
+      <div class="lang-tog">
+        <button class="lang-btn on" data-lang="vi">VI</button>
+        <button class="lang-btn"    data-lang="en">EN</button>
+      </div>
+      <button class="theme-tog" id="themeBtn" aria-label="Toggle theme">
+        <span class="t-icon sun">☀️</span>
+        <span class="t-icon moon">🌙</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ PAGE HERO ═══════════════════════════════════════ -->
+<section class="pg-hero" id="top">
+  <div class="pg-hero-bg">
+    <img src="../assets/hero_bg.png" alt="Zeal Quest" loading="eager" />
+    <div class="pg-hero-ov"></div>
+  </div>
+  <div class="pg-hero-ptk" id="ptk"></div>
+  <div class="pg-hero-inner">
+    <!-- LEFT TEXT -->
+    <div class="pg-hero-text">
+      <a href="../index.html" class="back-link" data-k="back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Quay Lại Trang Chủ</span>
+      </a>
+      <div style="margin-bottom:12px"><span class="chip">⚔️ Mobile RPG</span></div>
+      <h1 class="pg-h1">ZEAL<br/><span class="grad">QUEST</span></h1>
+      <p class="pg-tagline" data-k="zq_tagline">Tựa game nhập vai đỉnh cao chinh phục hàng triệu người chơi khắp thế giới</p>
+      <div class="pg-rating">
+        <span class="pg-stars">★★★★★</span>
+        <span class="pg-rv">4.9</span>
+        <span class="pg-rc">(128,450 đánh giá)</span>
+      </div>
+      <div class="store-row" data-app="Zeal Quest">
+        <a href="#" class="store-btn" id="zqGp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3.18 23.81L14.6 12.39 3.18.17A2 2 0 002 2v19.81a2 2 0 001.18 2zm17.36-10.05l-3.42-1.97L13.96 12l3.16 3.21 3.42-1.97a1.5 1.5 0 000-2.48zM4.34.04l11.06 6.38-3.14 3.19L4.34.04zM4.34 23.96l7.92-9.57 3.14 3.19L4.34 23.96z"/></svg>
+          <div><span class="s-label" data-k="s_get">Tải Trên</span><span class="s-name" data-k="s_gplay">Google Play</span></div>
+        </a>
+        <a href="#" class="store-btn sb-apple" id="zqAs">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><span class="s-label" data-k="s_get">Tải Trên</span><span class="s-name" data-k="s_astore">App Store</span></div>
+        </a>
+      </div>
+    </div>
+    <!-- RIGHT PHONE -->
+    <div class="pg-hero-phone">
+      <div class="phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen"><img src="../assets/app_screenshot_1.png" alt="Zeal Quest" id="zqPhoneImg" /></div>
+        <div class="phone-bar"></div>
+      </div>
+      <div class="phone-glow"></div>
+      <div class="thumb-strip">
+        <img src="../assets/app_screenshot_1.png" class="thumb on" alt="" data-i="0" />
+        <img src="../assets/app_screenshot_2.png" class="thumb" alt="" data-i="1" />
+        <img src="../assets/app_screenshot_3.png" class="thumb" alt="" data-i="2" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUICK STATS ═══════════════════════════════════ -->
+<div class="stats-strip">
+  <div class="stats-strip-inner">
+    <div class="ss-item"><span class="ss-val ss-v-grad">2.4M+</span><span class="ss-lbl">Active Players</span></div>
+    <div class="ss-item"><span class="ss-val ss-v-grad">150+</span><span class="ss-lbl">Countries</span></div>
+    <div class="ss-item"><span class="ss-val ss-v-grad">500+</span><span class="ss-lbl">Map Areas</span></div>
+    <div class="ss-item"><span class="ss-val ss-v-grad">200h+</span><span class="ss-lbl">Content</span></div>
+  </div>
+</div>
+
+<!-- ══ HOW TO PLAY ═══════════════════════════════════ -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="sec-head">
+      <span class="chip">Cách Chơi</span>
+      <h2 class="title">Bắt Đầu Hành Trình<br/><span class="grad">Trong 3 Bước</span></h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-step fade-up" data-d="0">
+        <div class="how-num">1</div>
+        <span class="how-icon-big">🧙</span>
+        <h3 data-k="zq_hw1_t">Tạo Nhân Vật</h3>
+        <p data-k="zq_hw1_d">Chọn 1 trong 8 lớp nhân vật với hàng trăm kỹ năng độc đáo.</p>
+      </div>
+      <div class="how-step fade-up" data-d="150">
+        <div class="how-num">2</div>
+        <span class="how-icon-big">🌍</span>
+        <h3 data-k="zq_hw2_t">Khám Phá Thế Giới</h3>
+        <p data-k="zq_hw2_d">Phiêu lưu qua 500+ vùng đất trong thế giới mở Aethoria khổng lồ.</p>
+      </div>
+      <div class="how-step fade-up" data-d="300">
+        <div class="how-num">3</div>
+        <span class="how-icon-big">🏆</span>
+        <h3 data-k="zq_hw3_t">Chinh Phục Đỉnh Cao</h3>
+        <p data-k="zq_hw3_d">Thi đấu PvP toàn cầu và trở thành huyền thoại bất diệt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENTO FEATURES ══════════════════════════════ -->
+<section class="section" id="features" style="background:var(--bg2)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="chip" data-k="zq_f_sec_t1">Tính Năng</span>
+      <h2 class="title"><span data-k="zq_f_sec_t1">Tại Sao Chọn</span><br/><span class="grad" data-k="zq_f_sec_t2">Zeal Quest?</span></h2>
+    </div>
+    <div class="bento">
+      <!-- Big card row 1 -->
+      <div class="bento-card col-7 row-2 fade-up" data-d="0">
+        <div class="b-shine"></div>
+        <div class="b-icon">⚔️</div>
+        <div class="b-title" data-k="zq_f1">Chiến Đấu Thời Gian Thực</div>
+        <div class="b-desc" data-k="zq_f1d">Hệ thống combat mượt mà với hàng trăm combo chiêu thức độc đáo. Skill chains, ultimate attacks và co-op PvE mang lại cảm giác chiến đấu chưa từng có.</div>
+        <div style="margin-top:auto;padding-top:16px"><span style="font-size:2.5rem">🗡️✨🛡️</span></div>
+      </div>
+      <div class="bento-card col-5 fade-up" data-d="80">
+        <div class="b-shine"></div>
+        <div class="b-icon">🌍</div>
+        <div class="b-title" data-k="zq_f2">Thế Giới Mở Khổng Lồ</div>
+        <div class="b-desc" data-k="zq_f2d">500+ khu vực độc đáo với hệ sinh thái sống động và thời tiết thay đổi.</div>
+      </div>
+      <div class="bento-card col-5 fade-up" data-d="160">
+        <div class="b-shine"></div>
+        <div class="b-huge-num grad">AAA</div>
+        <div class="b-huge-sub" data-k="zq_f3">Đồ Họa Unity 3D · Ray-tracing</div>
+      </div>
+      <!-- Row 2 -->
+      <div class="bento-card col-4 fade-up" data-d="0">
+        <div class="b-shine"></div>
+        <div class="b-icon">👑</div>
+        <div class="b-title" data-k="zq_f4">Cốt Truyện Sử Thi</div>
+        <div class="b-desc" data-k="zq_f4d">200+ giờ cốt truyện chính thống với nhiều kết thúc khác nhau.</div>
+      </div>
+      <div class="bento-card col-4 fade-up" data-d="80">
+        <div class="b-shine"></div>
+        <div class="b-huge-num grad">150+</div>
+        <div class="b-huge-sub" data-k="zq_f5">Quốc gia trong PvP</div>
+      </div>
+      <div class="bento-card col-4 fade-up" data-d="160">
+        <div class="b-shine"></div>
+        <div class="b-icon">🎵</div>
+        <div class="b-title" data-k="zq_f6">Âm Nhạc Sống Động</div>
+        <div class="b-desc" data-k="zq_f6d">80+ bản nhạc do nhạc sĩ đoạt Oscar sáng tác.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SCREENSHOT SLIDER ═══════════════════════════ -->
+<section class="section" id="screenshots">
+  <div class="container">
+    <div class="sec-head">
+      <span class="chip">Ảnh Chụp</span>
+      <h2 class="title">Nhìn Vào<br/><span class="grad">Thế Giới Aethoria</span></h2>
+    </div>
+    <div class="slider-wrap">
+      <button class="slider-prev" id="zqPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div id="zqTrack" class="slider-track">
+        <div class="slide-item"><img src="../assets/app_screenshot_1.png" alt="Zeal Quest screen 1"/><div class="slide-cap"><span data-k="zq_scr_t1">Màn Hình Chính</span></div></div>
+        <div class="slide-item"><img src="../assets/app_screenshot_2.png" alt="Zeal Quest screen 2"/><div class="slide-cap"><span data-k="zq_scr_t2">Hệ Thống Chiến Đấu</span></div></div>
+        <div class="slide-item"><img src="../assets/app_screenshot_3.png" alt="Zeal Quest screen 3"/><div class="slide-cap"><span data-k="zq_scr_t3">Chọn Nhân Vật</span></div></div>
+      </div>
+      <button class="slider-next" id="zqNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="slider-dots">
+      <span class="s-dot on" data-i="0"></span>
+      <span class="s-dot" data-i="1"></span>
+      <span class="s-dot" data-i="2"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOWNLOAD CTA ════════════════════════════════ -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="dl-cta fade-up">
+      <span class="chip" style="margin-bottom:16px">🔥 Miễn Phí Hoàn Toàn</span>
+      <h2 data-k="zq_dl_t">Sẵn Sàng Chiến Đấu?</h2>
+      <p data-k="zq_dl_d">Tải xuống miễn phí và nhận gói quà người chơi mới ngay hôm nay!</p>
+      <div class="store-row" style="justify-content:center" data-app="Zeal Quest">
+        <a href="#" class="store-btn" id="dlGp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M3.18 23.81L14.6 12.39 3.18.17A2 2 0 002 2v19.81a2 2 0 001.18 2zm17.36-10.05l-3.42-1.97L13.96 12l3.16 3.21 3.42-1.97a1.5 1.5 0 000-2.48zM4.34.04l11.06 6.38-3.14 3.19L4.34.04zM4.34 23.96l7.92-9.57 3.14 3.19L4.34 23.96z"/></svg>
+          <div><span class="s-label" data-k="s_get">Tải Trên</span><span class="s-name" data-k="s_gplay">Google Play</span></div>
+        </a>
+        <a href="#" class="store-btn sb-apple" id="dlAs">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><span class="s-label" data-k="s_get">Tải Trên</span><span class="s-name" data-k="s_astore">App Store</span></div>
+        </a>
+      </div>
+      <div class="trust-row">
+        <span class="trust-item" data-k="zq_trust1">✅ Miễn phí</span>
+        <span class="trust-item" data-k="zq_trust2">✅ Không quảng cáo cưỡng bức</span>
+        <span class="trust-item" data-k="zq_trust3">✅ Cập nhật liên tục</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo"><img src="../assets/zeal_logo.png" alt="" class="logo-img"/><span class="logo-txt">ZEAL<span class="logo-acc">GAME</span></span></div>
+        <p data-k="footer_desc">Chúng tôi tạo ra những trải nghiệm game mobile không thể quên được.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="fcol"><h5 data-k="fc_co">Công Ty</h5><a href="../index.html#about" data-k="f_about">Về Chúng Tôi</a><a href="../index.html#contact" data-k="f_contact">Liên Hệ</a></div>
+        <div class="fcol"><h5 data-k="fc_prod">Sản Phẩm</h5><a href="zeal-quest.html" data-k="nav_zealquest">Zeal Quest</a><a href="zealscan.html" data-k="nav_zealscan">ZealScan</a></div>
+        <div class="fcol"><h5 data-k="fc_legal">Pháp Lý</h5><a href="#" data-k="f_terms">Điều Khoản</a><a href="#" data-k="f_privacy">Bảo Mật</a></div>
+      </div>
+    </div>
+    <div class="footer-btm"><span data-k="footer_cr">© 2024 Zeal Game Studio.</span><span data-k="footer_made">Made with ❤️ in Việt Nam 🇻🇳</span></div>
+  </div>
+</footer>
+
+<!-- Mobile sticky bar -->
+<div class="dl-sticky" id="dlSticky" data-app="Zeal Quest">
+  <div><div class="app-name-sm">Zeal Quest</div><div class="app-sub-sm">Fantasy Mobile RPG</div></div>
+  <a href="#" class="btn btn-p btn-sm" id="dlStickyBtn">⬇️ Tải Miễn Phí</a>
+</div>
+
+<div class="toast" id="toast"><span class="t-icon"></span><span class="toast-msg" id="toastMsg"></span></div>
+
+<script src="../js/shared.js"></script>
+<script>
+  // Phone switcher
+  const zqSrcs = ['../assets/app_screenshot_1.png','../assets/app_screenshot_2.png','../assets/app_screenshot_3.png'];
+  initPhone('zqPhoneImg', '.thumb', zqSrcs);
+
+  // Slider
+  initSlider('zqTrack', 'zqPrev', 'zqNext', '.s-dot');
+
+  // Sticky btn
+  document.getElementById('dlStickyBtn')?.addEventListener('click', e => {
+    e.preventDefault();
+    const t = i18n[lang];
+    showToast(`Zeal Quest ${t.toast_coming} ${t.s_gplay}!`, '🟢');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZealScan – Ứng dụng tra cứu giá thẻ Pokémon TCG & OCG tức thì bằng AI. Quản lý bộ sưu tập thẻ bài chuyên nghiệp." />
+  <title>ZealScan – Pokémon Card Price Scanner | Zeal Game Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/page.css" />
+  <style>
+    /* ZealScan gold overrides */
+    .pg-hero-ov{background:linear-gradient(120deg,rgba(7,10,20,.96) 40%,rgba(7,10,20,.5) 80%,rgba(7,10,20,.15) 100%),linear-gradient(to bottom,transparent 50%,rgba(7,10,20,1) 100%)}
+    [data-theme="light"] .pg-hero-ov{background:linear-gradient(120deg,rgba(255,252,240,.97) 40%,rgba(255,252,240,.6) 80%,rgba(255,252,240,.15) 100%),linear-gradient(to bottom,transparent 50%,rgba(240,244,255,1) 100%)}
+    .chip-g{background:var(--gg)}
+    .how-step.gs .how-num{background:var(--gg);box-shadow:var(--sh-gold)}
+    .store-btn:hover{border-color:var(--go);box-shadow:var(--sh-gold)}
+    .dl-cta.gold::before{background:radial-gradient(ellipse at 50% 120%,rgba(245,158,11,.14) 0%,transparent 65%)}
+    .slider-prev:hover,.slider-next:hover{background:var(--gg);box-shadow:var(--sh-gold)}
+    .s-dot.on{background:var(--gg)}
+    /* Scan animation card */
+    .scan-demo{position:relative;width:100%;max-width:340px;margin:0 auto}
+    .scan-card-mock{background:var(--card2);border:2px solid rgba(245,158,11,.3);border-radius:20px;padding:20px;text-align:center;position:relative;overflow:hidden}
+    .scan-line{position:absolute;left:0;right:0;height:2px;background:linear-gradient(to right,transparent,rgba(245,158,11,.9),transparent);animation:scanline 2.5s ease-in-out infinite}
+    @keyframes scanline{0%{top:10%}100%{top:90%}}
+    .scan-result{display:flex;align-items:center;justify-content:space-between;background:var(--card);border:1px solid rgba(245,158,11,.25);border-radius:12px;padding:12px 16px;margin-top:12px;text-align:left}
+    .scan-result-price{font-family:var(--display);font-size:1.5rem;font-weight:700}
+    .scan-result-price.grad-gold{background:var(--gg);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .scan-result-label{font-size:.72rem;color:var(--t3);text-transform:uppercase;letter-spacing:.05em}
+    .price-row{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+    .price-badge{font-size:.72rem;padding:3px 9px;border-radius:var(--r-full);background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.25);color:var(--go);font-weight:600}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar solid" id="navbar">
+  <div class="nav-c">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/zeal_logo.png" alt="Zeal Game Studio" class="logo-img" />
+      <span class="logo-txt">ZEAL<span class="logo-acc">GAME</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html"          class="nav-link" data-k="nav_home">Trang Chủ</a></li>
+      <li><a href="../index.html#about"    class="nav-link" data-k="nav_about">Về Chúng Tôi</a></li>
+      <li><a href="../index.html#products" class="nav-link" data-k="nav_products">Sản Phẩm</a></li>
+      <li><a href="zeal-quest.html"        class="nav-link" data-k="nav_zealquest">Zeal Quest</a></li>
+      <li><a href="zealscan.html"          class="nav-link nav-zs active" data-k="nav_zealscan">ZealScan</a></li>
+      <li><a href="../index.html#contact"  class="nav-link" data-k="nav_contact">Liên Hệ</a></li>
+    </ul>
+    <div class="nav-acts">
+      <div class="lang-tog">
+        <button class="lang-btn on" data-lang="vi">VI</button>
+        <button class="lang-btn"    data-lang="en">EN</button>
+      </div>
+      <button class="theme-tog" id="themeBtn" aria-label="Toggle theme">
+        <span class="t-icon sun">☀️</span>
+        <span class="t-icon moon">🌙</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ PAGE HERO ═══════════════════════════════════════ -->
+<section class="pg-hero" id="top">
+  <div class="pg-hero-bg">
+    <img src="../assets/zealscan_screenshot_2.png" alt="ZealScan" loading="eager" style="object-position:center top" />
+    <div class="pg-hero-ov"></div>
+  </div>
+  <div class="pg-hero-ptk" id="ptk"></div>
+  <div class="pg-hero-inner">
+    <!-- LEFT TEXT -->
+    <div class="pg-hero-text">
+      <a href="../index.html" class="back-link" data-k="back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Quay Lại Trang Chủ</span>
+      </a>
+      <div style="margin-bottom:12px"><span class="chip chip-g">🎴 Pokémon TCG &amp; OCG Scanner</span></div>
+      <h1 class="pg-h1">ZEAL<br/><span class="grad-gold">SCAN</span></h1>
+      <p class="pg-tagline" data-k="zs_tagline">Tra cứu giá thẻ Pokémon TCG &amp; OCG tức thì với công nghệ AI nhận diện thông minh</p>
+      <div class="pg-rating">
+        <span class="pg-stars" style="color:#f59e0b">★★★★★</span>
+        <span class="pg-rv">4.8</span>
+        <span class="pg-rc">(52,300 đánh giá)</span>
+      </div>
+      <div class="store-row" data-app="ZealScan">
+        <a href="#" class="store-btn store-btn-gold" id="zsGp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M3.18 23.81L14.6 12.39 3.18.17A2 2 0 002 2v19.81a2 2 0 001.18 2zm17.36-10.05l-3.42-1.97L13.96 12l3.16 3.21 3.42-1.97a1.5 1.5 0 000-2.48zM4.34.04l11.06 6.38-3.14 3.19L4.34.04zM4.34 23.96l7.92-9.57 3.14 3.19L4.34 23.96z"/></svg>
+          <div><span class="s-label" data-k="s_get">Tải Trên</span><span class="s-name" data-k="s_gplay">Google Play</span></div>
+        </a>
+        <a href="#" class="store-btn store-btn-gold sb-apple" id="zsAs">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><span class="s-label" data-k="s_get">Tải Trên</span><span class="s-name" data-k="s_astore">App Store</span></div>
+        </a>
+      </div>
+    </div>
+    <!-- RIGHT — scan demo + phone -->
+    <div class="pg-hero-phone">
+      <div class="phone phone-gold">
+        <div class="phone-notch"></div>
+        <div class="phone-screen"><img src="../assets/zealscan_screenshot_1.png" alt="ZealScan" id="zsPhoneImg" /></div>
+        <div class="phone-bar"></div>
+      </div>
+      <div class="phone-glow phone-gold"></div>
+      <div class="thumb-strip">
+        <img src="../assets/zealscan_screenshot_1.png" class="thumb on" alt="" data-i="0" />
+        <img src="../assets/zealscan_screenshot_2.png" class="thumb" alt="" data-i="1" />
+        <img src="../assets/zealscan_screenshot_3.png" class="thumb" alt="" data-i="2" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUICK STATS ═══════════════════════════════════ -->
+<div class="stats-strip">
+  <div class="stats-strip-inner">
+    <div class="ss-item"><span class="ss-val ss-v-gold">0.5s</span><span class="ss-lbl">Scan Speed</span></div>
+    <div class="ss-item"><span class="ss-val ss-v-gold">180K+</span><span class="ss-lbl">Card Database</span></div>
+    <div class="ss-item"><span class="ss-val ss-v-gold">10+</span><span class="ss-lbl">Price Sources</span></div>
+    <div class="ss-item"><span class="ss-val ss-v-gold">1 Year</span><span class="ss-lbl">Price History</span></div>
+  </div>
+</div>
+
+<!-- ══ HOW IT WORKS ═══════════════════════════════════ -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="sec-head">
+      <span class="chip chip-g">Cách Hoạt Động</span>
+      <h2 class="title">Tra Giá Thẻ<br/><span class="grad-gold">Chỉ Trong 3 Bước</span></h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-step gs fade-up" data-d="0">
+        <div class="how-num">1</div>
+        <span class="how-icon-big">📷</span>
+        <h3 data-k="zs_hw1_t">Chụp Thẻ Bài</h3>
+        <p data-k="zs_hw1_d">Mở app, hướng camera về phía thẻ Pokémon TCG hoặc OCG bất kỳ.</p>
+      </div>
+      <div class="how-step gs fade-up" data-d="150">
+        <div class="how-num">2</div>
+        <span class="how-icon-big">🤖</span>
+        <h3 data-k="zs_hw2_t">AI Nhận Diện</h3>
+        <p data-k="zs_hw2_d">Công nghệ AI nhận diện tên, bộ bài, độ hiếm và in ấn chỉ trong 0.5 giây.</p>
+      </div>
+      <div class="how-step gs fade-up" data-d="300">
+        <div class="how-num">3</div>
+        <span class="how-icon-big">💰</span>
+        <h3 data-k="zs_hw3_t">Xem Giá Tức Thì</h3>
+        <p data-k="zs_hw3_d">Nhận giá tổng hợp từ 10+ sàn giao dịch lớn với biểu đồ lịch sử 1 năm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BENTO FEATURES ══════════════════════════════ -->
+<section class="section" id="features" style="background:var(--bg2)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="chip chip-g" data-k="zs_f_sec_t1">Tính Năng</span>
+      <h2 class="title"><span data-k="zs_f_sec_t1">Tại Sao Chọn</span><br/><span class="grad-gold" data-k="zs_f_sec_t2">ZealScan?</span></h2>
+    </div>
+    <div class="bento">
+      <!-- Big scan + price demo card -->
+      <div class="bento-card gold col-7 row-2 fade-up" data-d="0">
+        <div class="b-shine"></div>
+        <div class="b-icon">📷</div>
+        <div class="b-title" data-k="zs_f1">Quét AI Tức Thì</div>
+        <div class="b-desc" data-k="zs_f1d">Nhận diện thẻ Pokémon TCG và OCG chỉ trong 0.5 giây, kể cả khi thẻ bị mờ hay che khuất.</div>
+        <!-- Mini scan demo -->
+        <div style="margin-top:auto;padding-top:16px">
+          <div class="scan-card-mock" style="border-radius:12px;padding:12px;">
+            <div style="font-size:2rem">🎴</div>
+            <div class="scan-line"></div>
+            <div class="scan-result">
+              <div><div class="scan-result-label">Charizard VMAX</div><div class="scan-result-price grad-gold">$284</div></div>
+              <div style="text-align:right"><div class="scan-result-label">TCGPlayer</div><div style="color:var(--go);font-size:.82rem;font-weight:600">↑ +12%</div></div>
+            </div>
+            <div class="price-row">
+              <span class="price-badge">TCGPlayer $284</span>
+              <span class="price-badge">eBay $291</span>
+              <span class="price-badge">CM €260</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bento-card gold col-5 fade-up" data-d="80">
+        <div class="b-shine"></div>
+        <div class="b-huge-num grad-gold">10+</div>
+        <div class="b-huge-sub" data-k="zs_f2">Sàn tổng hợp giá: eBay, TCGPlayer, CardMarket…</div>
+      </div>
+      <div class="bento-card gold col-5 fade-up" data-d="160">
+        <div class="b-shine"></div>
+        <div class="b-icon">📈</div>
+        <div class="b-title" data-k="zs_f3">Lịch Sử Giá 1 Năm</div>
+        <div class="b-desc" data-k="zs_f3d">Theo dõi xu hướng để biết khi nào mua, khi nào bán.</div>
+      </div>
+      <!-- Row 2 -->
+      <div class="bento-card gold col-4 fade-up" data-d="0">
+        <div class="b-shine"></div>
+        <div class="b-icon">🗂️</div>
+        <div class="b-title" data-k="zs_f4">Quản Lý Collection</div>
+        <div class="b-desc" data-k="zs_f4d">Tự động tính giá trị tổng bộ sưu tập.</div>
+      </div>
+      <div class="bento-card gold col-4 fade-up" data-d="80">
+        <div class="b-shine"></div>
+        <div class="b-icon">🔔</div>
+        <div class="b-title" data-k="zs_f5">Cảnh Báo Giá</div>
+        <div class="b-desc" data-k="zs_f5d">Đặt ngưỡng và nhận thông báo khi thẻ chạm mức giá đó.</div>
+      </div>
+      <div class="bento-card gold col-4 fade-up" data-d="160">
+        <div class="b-shine"></div>
+        <div class="b-huge-num grad-gold">180K</div>
+        <div class="b-huge-sub" data-k="zs_f6">Thẻ TCG &amp; OCG trong database</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARKETS ══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="market-grid fade-up">
+      <p class="mlabel" data-k="zs_mkt_lbl">Tổng Hợp Giá Từ</p>
+      <div class="mlist">
+        <div class="mbadge">TCGPlayer</div>
+        <div class="mbadge">CardMarket</div>
+        <div class="mbadge">eBay</div>
+        <div class="mbadge">Mercari</div>
+        <div class="mbadge">Yahoo! Auctions</div>
+        <div class="mbadge">Shopee</div>
+        <div class="mbadge">Lazada</div>
+        <div class="mbadge">Troll &amp; Toad</div>
+        <div class="mbadge">CoolStuffInc</div>
+        <div class="mbadge">+2 More</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SCREENSHOT SLIDER ═══════════════════════════ -->
+<section class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="sec-head">
+      <span class="chip chip-g">Ảnh Chụp</span>
+      <h2 class="title">Nhìn Vào<br/><span class="grad-gold">ZealScan App</span></h2>
+    </div>
+    <div class="slider-wrap">
+      <button class="slider-prev" id="zsPrev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div id="zsTrack" class="slider-track">
+        <div class="slide-item"><img src="../assets/zealscan_screenshot_1.png" alt="ZealScan screen 1"/><div class="slide-cap"><span data-k="zs_scr_t1">Quét Thẻ Tức Thì</span></div></div>
+        <div class="slide-item"><img src="../assets/zealscan_screenshot_2.png" alt="ZealScan screen 2"/><div class="slide-cap"><span data-k="zs_scr_t2">Giá &amp; Biểu Đồ</span></div></div>
+        <div class="slide-item"><img src="../assets/zealscan_screenshot_3.png" alt="ZealScan screen 3"/><div class="slide-cap"><span data-k="zs_scr_t3">Bộ Sưu Tập</span></div></div>
+      </div>
+      <button class="slider-next" id="zsNext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="slider-dots">
+      <span class="s-dot on" data-i="0"></span>
+      <span class="s-dot" data-i="1"></span>
+      <span class="s-dot" data-i="2"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOWNLOAD CTA ════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="dl-cta gold fade-up">
+      <span class="chip chip-g" style="margin-bottom:16px">🎴 Miễn Phí Hoàn Toàn</span>
+      <h2 data-k="zs_dl_t">Bắt Đầu Tra Giá Ngay?</h2>
+      <p data-k="zs_dl_d">Miễn phí hoàn toàn. Không cần đăng ký để quét thẻ đầu tiên!</p>
+      <div class="store-row" style="justify-content:center" data-app="ZealScan">
+        <a href="#" class="store-btn store-btn-gold" id="dlGp">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M3.18 23.81L14.6 12.39 3.18.17A2 2 0 002 2v19.81a2 2 0 001.18 2zm17.36-10.05l-3.42-1.97L13.96 12l3.16 3.21 3.42-1.97a1.5 1.5 0 000-2.48zM4.34.04l11.06 6.38-3.14 3.19L4.34.04zM4.34 23.96l7.92-9.57 3.14 3.19L4.34 23.96z"/></svg>
+          <div><span class="s-label" data-k="s_get">Tải Trên</span><span class="s-name" data-k="s_gplay">Google Play</span></div>
+        </a>
+        <a href="#" class="store-btn store-btn-gold sb-apple" id="dlAs">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          <div><span class="s-label" data-k="s_get">Tải Trên</span><span class="s-name" data-k="s_astore">App Store</span></div>
+        </a>
+      </div>
+      <div class="trust-row">
+        <span class="trust-item" data-k="zs_trust1">✅ Miễn phí</span>
+        <span class="trust-item" data-k="zs_trust2">✅ 100% offline scan</span>
+        <span class="trust-item" data-k="zs_trust3">✅ Cập nhật giá hàng giờ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo"><img src="../assets/zeal_logo.png" alt="" class="logo-img"/><span class="logo-txt">ZEAL<span class="logo-acc">GAME</span></span></div>
+        <p data-k="footer_desc">Chúng tôi tạo ra những trải nghiệm game mobile không thể quên được.</p>
+      </div>
+      <div class="footer-cols">
+        <div class="fcol"><h5 data-k="fc_co">Công Ty</h5><a href="../index.html#about" data-k="f_about">Về Chúng Tôi</a><a href="../index.html#contact" data-k="f_contact">Liên Hệ</a></div>
+        <div class="fcol"><h5 data-k="fc_prod">Sản Phẩm</h5><a href="zeal-quest.html" data-k="nav_zealquest">Zeal Quest</a><a href="zealscan.html" data-k="nav_zealscan">ZealScan</a></div>
+        <div class="fcol"><h5 data-k="fc_legal">Pháp Lý</h5><a href="#" data-k="f_terms">Điều Khoản</a><a href="#" data-k="f_privacy">Bảo Mật</a></div>
+      </div>
+    </div>
+    <div class="footer-btm"><span data-k="footer_cr">© 2024 Zeal Game Studio.</span><span data-k="footer_made">Made with ❤️ in Việt Nam 🇻🇳</span></div>
+  </div>
+</footer>
+
+<!-- Mobile sticky bar -->
+<div class="dl-sticky" data-app="ZealScan">
+  <div><div class="app-name-sm">ZealScan</div><div class="app-sub-sm">Pokémon Card Scanner</div></div>
+  <a href="#" class="btn btn-g btn-sm" id="dlStickyBtn">⬇️ Tải Miễn Phí</a>
+</div>
+
+<div class="toast" id="toast"><span class="t-icon"></span><span class="toast-msg" id="toastMsg"></span></div>
+
+<script src="../js/shared.js"></script>
+<script>
+  // Phone switcher
+  const zsSrcs = ['../assets/zealscan_screenshot_1.png','../assets/zealscan_screenshot_2.png','../assets/zealscan_screenshot_3.png'];
+  initPhone('zsPhoneImg', '.thumb', zsSrcs);
+
+  // Slider
+  initSlider('zsTrack', 'zsPrev', 'zsNext', '.s-dot');
+
+  // Sticky btn
+  document.getElementById('dlStickyBtn')?.addEventListener('click', e => {
+    e.preventDefault();
+    const t = i18n[lang];
+    showToast(`ZealScan ${t.toast_coming} ${t.s_gplay}!`, '🟢');
+  });
+</script>
+</body>
+</html>
