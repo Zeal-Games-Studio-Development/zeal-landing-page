@@ -1,263 +1,349 @@
 <!DOCTYPE html>
-<html lang="vi" data-theme="dark">
+<html lang="vi" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Zeal Game Studio – Studio game mobile hàng đầu Việt Nam. Khám phá Zeal Quest RPG và ZealScan tra cứu giá thẻ Pokémon." />
+  <meta name="description"
+    content="Zeal Game Studio – Studio game mobile hàng đầu Việt Nam. Khám phá Zeal Quest RPG và ZealScan tra cứu giá thẻ Pokémon." />
   <title>Zeal Game Studio – Forge Your Legend</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="css/shared.css" />
   <link rel="stylesheet" href="css/index.css" />
 </head>
+
 <body>
 
-<!-- ══ NAVBAR ══════════════════════════════════════════ -->
-<nav class="navbar" id="navbar">
-  <div class="nav-c">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/zeal_logo.png" alt="Zeal Game Studio" class="logo-img" />
-      <span class="logo-txt">ZEAL<span class="logo-acc">GAME</span></span>
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home"     class="nav-link active" data-k="nav_home">Trang Chủ</a></li>
-      <li><a href="#about"    class="nav-link" data-k="nav_about">Về Chúng Tôi</a></li>
-      <li><a href="#products" class="nav-link" data-k="nav_products">Sản Phẩm</a></li>
-      <li><a href="pages/zeal-quest.html" class="nav-link" data-k="nav_zealquest">Zeal Quest</a></li>
-      <li><a href="pages/zealscan.html" class="nav-link nav-zs" data-k="nav_zealscan">ZealScan</a></li>
-      <li><a href="#contact"  class="nav-link" data-k="nav_contact">Liên Hệ</a></li>
-    </ul>
-    <div class="nav-acts">
-      <div class="lang-tog">
-        <button class="lang-btn on" data-lang="vi">VI</button>
-        <button class="lang-btn"    data-lang="en">EN</button>
-      </div>
-      <button class="theme-tog" id="themeBtn" aria-label="Toggle theme">
-        <span class="t-icon sun">☀️</span>
-        <span class="t-icon moon">🌙</span>
-      </button>
-      <button class="burger" id="burger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<!-- ══ HERO ════════════════════════════════════════════ -->
-<section class="hero" id="home">
-  <div class="hero-bg">
-    <img src="assets/hero_bg.png" alt="Hero" loading="eager" />
-    <div class="hero-ov"></div>
-  </div>
-  <div class="hero-ptk" id="ptk"></div>
-  <div class="hero-inner">
-    <div class="hero-badge" data-k="hero_badge">🎮 Studio Game Mobile Hàng Đầu</div>
-    <h1 class="hero-h1">
-      <span data-k="hero_h1_a">FORGE YOUR</span><br/>
-      <span class="grad" data-k="hero_h1_b">LEGEND</span>
-    </h1>
-    <p class="hero-sub" data-k="hero_sub">Zeal Game Studio — nơi những trải nghiệm chơi game đỉnh cao được tạo ra.</p>
-    <div class="hero-ctas">
-      <a href="#products" class="btn btn-p">
-        <span data-k="hero_cta1">Khám Phá Ngay</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  <!-- ══ NAVBAR ══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-c">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/zeal_logo.png" alt="Zeal Game Studio" class="logo-img" />
+        <span class="logo-txt">ZEAL<span class="logo-acc">GAME</span></span>
       </a>
-      <a href="#about" class="btn btn-out" data-k="hero_cta2">Về Chúng Tôi</a>
-    </div>
-    <div class="stats-bar">
-      <div class="stat"><span class="stat-n" data-t="2400000">0</span><span class="stat-l" data-k="stat_players">Người Chơi</span></div>
-      <div class="stat-div"></div>
-      <div class="stat"><span class="stat-n" data-t="150">0</span><span class="stat-l" data-k="stat_countries">Quốc Gia</span></div>
-      <div class="stat-div"></div>
-      <div class="stat"><span class="stat-n" data-t="48">0</span><span class="stat-l" data-k="stat_awards">Giải Thưởng</span></div>
-      <div class="stat-div"></div>
-      <div class="stat"><span class="stat-n" data-t="4.9">0</span><span class="stat-l" data-k="stat_rating">Điểm Đánh Giá</span></div>
-    </div>
-  </div>
-  <div class="scroll-hint">
-    <span data-k="scroll_hint">Cuộn Xuống</span>
-    <div class="scroll-arr"></div>
-  </div>
-</section>
-
-<!-- ══ ABOUT ═══════════════════════════════════════════ -->
-<section class="section" id="about">
-  <div class="container">
-    <div class="about-wrap">
-      <div>
-        <span class="chip" data-k="about_chip">Về Chúng Tôi</span>
-        <h2 class="title"><span data-k="about_t1">Đam Mê Tạo Ra</span><br/><span class="grad" data-k="about_t2">Thế Giới Mới</span></h2>
-        <p class="about-desc" data-k="about_d1">Thành lập năm 2019 tại TP. Hồ Chí Minh, <strong>Zeal Game Studio</strong> là studio game mobile của những người trẻ Việt Nam đầy nhiệt huyết.</p>
-        <p class="about-desc" data-k="about_d2">Với đội ngũ hơn 60 chuyên gia trong lĩnh vực thiết kế, lập trình và âm nhạc, chúng tôi cam kết mang đến những tựa game chất lượng AAA.</p>
-        <div class="pillars">
-          <div class="pillar"><div class="pillar-icon">🎯</div><div><strong data-k="p1_t">Sứ Mệnh</strong><p data-k="p1_d">Đưa sản phẩm Việt lên bản đồ thế giới với chất lượng không nhân nhượng.</p></div></div>
-          <div class="pillar"><div class="pillar-icon">💡</div><div><strong data-k="p2_t">Tầm Nhìn</strong><p data-k="p2_d">Trở thành studio game và app mobile hàng đầu Đông Nam Á vào năm 2027.</p></div></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-k="nav_home">Trang Chủ</a></li>
+        <li><a href="#about" class="nav-link" data-k="nav_about">Về Chúng Tôi</a></li>
+        <li><a href="#products" class="nav-link" data-k="nav_products">Sản Phẩm</a></li>
+        <li><a href="pages/zeal-quest.html" class="nav-link" data-k="nav_zealquest">Zeal Quest</a></li>
+        <li><a href="pages/zealscan.html" class="nav-link nav-zs" data-k="nav_zealscan">ZealScan</a></li>
+        <li><a href="#contact" class="nav-link" data-k="nav_contact">Liên Hệ</a></li>
+      </ul>
+      <div class="nav-acts">
+        <div class="lang-tog">
+          <button class="lang-btn on" data-lang="vi">VI</button>
+          <button class="lang-btn" data-lang="en">EN</button>
         </div>
-      </div>
-      <div class="float-cards">
-        <div class="fc fc1"><div class="fc-ico">⚙️</div><div><strong data-k="fc1_t">Game Engine</strong><span>Unity 3D / Unreal</span></div></div>
-        <div class="fc fc2"><div class="fc-ico">🌍</div><div><strong data-k="fc2_t">Phát Hành</strong><span>iOS &amp; Android</span></div></div>
-        <div class="fc fc3"><div class="fc-ico">🏆</div><div><strong data-k="fc3_t">Top Charts</strong><span>#1 Việt Nam</span></div></div>
-        <div class="fc-orb"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ PRODUCTS ═════════════════════════════════════════ -->
-<section class="section" id="products" style="background:var(--bg2)">
-  <div class="container">
-    <div class="sec-head">
-      <span class="chip" data-k="prod_chip">Sản Phẩm</span>
-      <h2 class="title"><span data-k="prod_t1">Hai Sản Phẩm,</span><br/><span class="grad" data-k="prod_t2">Một Tiêu Chí Đỉnh Cao</span></h2>
-      <p class="desc" data-k="prod_desc">Từ thế giới game RPG hùng tráng đến công cụ tra cứu thẻ bài chuyên nghiệp.</p>
-    </div>
-    <div class="products-wrap">
-      <!-- Zeal Quest -->
-      <div class="pcard" data-app="Zeal Quest">
-        <div class="pcard-top">
-          <div class="pcard-emoji">⚔️</div>
-          <div class="pcard-shine"></div>
-        </div>
-        <div class="pcard-body">
-          <span class="pbadge" data-k="zq_badge">Mobile RPG</span>
-          <h3 data-k="zq_t">Zeal Quest</h3>
-          <p data-k="zq_desc">Bước vào thế giới Aethoria hùng vĩ — chiến đấu với hàng trăm loài quái vật, thu thập trang bị huyền thoại và viết nên câu chuyện của riêng bạn.</p>
-          <div class="pcard-foot">
-            <div class="ptags">
-              <span class="ptag" data-k="zq_t1">RPG</span>
-              <span class="ptag" data-k="zq_t2">Nhập Vai</span>
-              <span class="ptag" data-k="zq_t3">PvP</span>
-            </div>
-            <a href="pages/zeal-quest.html" class="btn btn-p btn-sm" data-k="zq_cta">Xem Chi Tiết</a>
-          </div>
-        </div>
-      </div>
-      <!-- ZealScan -->
-      <div class="pcard gold" data-app="ZealScan">
-        <div class="pcard-top">
-          <div class="pcard-emoji">🔍</div>
-          <div class="pcard-shine"></div>
-        </div>
-        <div class="pcard-body">
-          <span class="pbadge" data-k="zs_badge">Card Scanner</span>
-          <h3 data-k="zs_t">ZealScan</h3>
-          <p data-k="zs_desc">Quét ảnh bất kỳ thẻ Pokémon TCG hoặc OCG — nhận giá thị trường tức thì từ 10+ sàn giao dịch quốc tế. Quản lý bộ sưu tập thẻ bài chuyên nghiệp.</p>
-          <div class="pcard-foot">
-            <div class="ptags">
-              <span class="ptag" data-k="zs_t1">Pokemon TCG</span>
-              <span class="ptag" data-k="zs_t2">OCG</span>
-              <span class="ptag" data-k="zs_t3">Tra Giá</span>
-            </div>
-            <a href="pages/zealscan.html" class="btn btn-g btn-sm" data-k="zs_cta">Xem Chi Tiết</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ TEAM ════════════════════════════════════════════ -->
-<section class="section" id="team">
-  <div class="container">
-    <div class="sec-head">
-      <span class="chip" data-k="team_chip">Đội Ngũ</span>
-      <h2 class="title"><span data-k="team_t1">Những Con Người</span><br/><span class="grad" data-k="team_t2">Tạo Ra Huyền Thoại</span></h2>
-    </div>
-    <div class="team-grid">
-      <div class="tcard fade-up" data-d="0"><div class="t-av">NV</div><h4>Nguyễn Văn An</h4><span class="t-role" data-k="role_ceo">Founder &amp; CEO</span><p>10+ năm kinh nghiệm trong ngành game, từng làm việc tại Gameloft và VNG.</p></div>
-      <div class="tcard fade-up" data-d="100"><div class="t-av">TT</div><h4>Trần Thị Bích</h4><span class="t-role" data-k="role_art">Art Director</span><p>Thiên tài về concept art, từng cộng tác tại các studio Nhật Bản và Hàn Quốc.</p></div>
-      <div class="tcard fade-up" data-d="200"><div class="t-av">LM</div><h4>Lê Minh Khoa</h4><span class="t-role" data-k="role_dev">Lead Developer</span><p>Chuyên gia Unity &amp; Unreal, kiến trúc sư hệ thống backend quy mô hàng triệu người dùng.</p></div>
-      <div class="tcard fade-up" data-d="300"><div class="t-av">PH</div><h4>Phạm Hải Yến</h4><span class="t-role" data-k="role_design">Game Designer</span><p>Tốt nghiệp xuất sắc tại DigiPen Singapore, thiên tài thiết kế gameplay.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ CONTACT ════════════════════════════════════════ -->
-<section class="section" id="contact" style="background:var(--bg2)">
-  <div class="container">
-    <div class="sec-head">
-      <span class="chip" data-k="contact_chip">Liên Hệ</span>
-      <h2 class="title"><span data-k="contact_t1">Kết Nối Với</span><br/><span class="grad" data-k="contact_t2">Zeal Game Studio</span></h2>
-      <p class="desc" data-k="contact_desc">Chúng tôi luôn sẵn sàng lắng nghe bạn</p>
-    </div>
-    <div class="contact-wrap">
-      <div class="contact-info">
-        <div class="ci-item"><div class="ci-icon">📍</div><div><strong data-k="ci_addr">Địa Chỉ</strong><p>123 Đường Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh, Việt Nam</p></div></div>
-        <div class="ci-item"><div class="ci-icon">📧</div><div><strong data-k="ci_email">Email</strong><p>hello@zealstudio.vn</p></div></div>
-        <div class="ci-item"><div class="ci-icon">📞</div><div><strong data-k="ci_phone">Điện Thoại</strong><p>+84 28 3838 9999</p></div></div>
-        <div class="socials">
-          <a href="#" class="soc-btn" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a href="#" class="soc-btn" aria-label="YouTube"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a>
-          <a href="#" class="soc-btn" aria-label="Discord"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.079.11 18.1.127 18.115a19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg></a>
-        </div>
-      </div>
-      <form class="cf" id="contactForm">
-        <div class="cf-field"><label data-k="f_name">Họ và Tên</label><input type="text" data-kph="f_name_ph" placeholder="Nguyễn Văn A" required /></div>
-        <div class="cf-field"><label data-k="f_email">Email</label><input type="email" data-kph="f_email_ph" placeholder="email@example.com" required /></div>
-        <div class="cf-field">
-          <label data-k="f_subj">Chủ Đề</label>
-          <select>
-            <option data-k="f_subj_ph">Chọn chủ đề...</option>
-            <option data-k="f_o1">Hợp Tác</option>
-            <option data-k="f_o2">Truyền Thông / Báo Chí</option>
-            <option data-k="f_o3">Hỗ Trợ Game</option>
-            <option data-k="f_o4">ZealScan Support</option>
-            <option data-k="f_o5">Tuyển Dụng</option>
-            <option data-k="f_o6">Khác</option>
-          </select>
-        </div>
-        <div class="cf-field"><label data-k="f_msg">Tin Nhắn</label><textarea rows="4" data-kph="f_msg_ph" placeholder="Nội dung tin nhắn..." required></textarea></div>
-        <button type="submit" class="btn btn-p" id="submitBtn" style="width:100%;justify-content:center">
-          <span data-k="f_submit">Gửi Tin Nhắn</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z"/></svg>
+        <button class="theme-tog" id="themeBtn" aria-label="Toggle theme">
+          <span class="t-icon sun">☀️</span>
+          <span class="t-icon moon">🌙</span>
         </button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FOOTER ════════════════════════════════════════ -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-logo"><img src="assets/zeal_logo.png" alt="" class="logo-img"/><span class="logo-txt">ZEAL<span class="logo-acc">GAME</span></span></div>
-        <p data-k="footer_desc">Chúng tôi tạo ra những trải nghiệm game mobile không thể quên được. Từ Việt Nam, cho thế giới.</p>
-      </div>
-      <div class="footer-cols">
-        <div class="fcol">
-          <h5 data-k="fc_co">Công Ty</h5>
-          <a href="#about" data-k="f_about">Về Chúng Tôi</a>
-          <a href="#contact" data-k="f_contact">Liên Hệ</a>
-          <a href="#" data-k="f_careers">Tuyển Dụng</a>
-          <a href="#" data-k="f_news">Tin Tức</a>
-        </div>
-        <div class="fcol">
-          <h5 data-k="fc_prod">Sản Phẩm</h5>
-          <a href="pages/zeal-quest.html" data-k="nav_zealquest">Zeal Quest</a>
-          <a href="pages/zealscan.html" data-k="nav_zealscan">ZealScan</a>
-          <a href="#" data-k="f_indev">Đang Phát Triển</a>
-          <a href="#" data-k="f_road">Lộ Trình</a>
-        </div>
-        <div class="fcol">
-          <h5 data-k="fc_legal">Pháp Lý</h5>
-          <a href="#" data-k="f_terms">Điều Khoản</a>
-          <a href="#" data-k="f_privacy">Bảo Mật</a>
-          <a href="#" data-k="f_eula">EULA</a>
-        </div>
+        <button class="burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
-    <div class="footer-btm">
-      <span data-k="footer_cr">© 2024 Zeal Game Studio. Tất cả quyền được bảo lưu.</span>
-      <span data-k="footer_made">Made with ❤️ in Việt Nam 🇻🇳</span>
+  </nav>
+
+  <!-- ══ HERO ════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <img src="assets/hero_bg.png" alt="Hero" loading="eager" />
+      <div class="hero-ov"></div>
     </div>
-  </div>
-</footer>
+    <div class="hero-ptk" id="ptk"></div>
+    <div class="hero-inner">
+      <div class="hero-badge" data-k="hero_badge">🎮 Studio Game Mobile Hàng Đầu</div>
+      <h1 class="hero-h1">
+        <span data-k="hero_h1_a">FORGE YOUR</span><br />
+        <span class="grad" data-k="hero_h1_b">LEGEND</span>
+      </h1>
+      <p class="hero-sub" data-k="hero_sub">Zeal Game Studio — nơi những trải nghiệm chơi game đỉnh cao được tạo ra.</p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn btn-p">
+          <span data-k="hero_cta1">Khám Phá Ngay</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#about" class="btn btn-out" data-k="hero_cta2">Về Chúng Tôi</a>
+      </div>
+      <div class="stats-bar">
+        <div class="stat"><span class="stat-n" data-t="2400000">0</span><span class="stat-l" data-k="stat_players">Người
+            Chơi</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n" data-t="150">0</span><span class="stat-l" data-k="stat_countries">Quốc
+            Gia</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n" data-t="48">0</span><span class="stat-l" data-k="stat_awards">Giải
+            Thưởng</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-n" data-t="4.9">0</span><span class="stat-l" data-k="stat_rating">Điểm Đánh
+            Giá</span></div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span data-k="scroll_hint">Cuộn Xuống</span>
+      <div class="scroll-arr"></div>
+    </div>
+  </section>
 
-<div class="toast" id="toast"><span class="t-icon"></span><span class="toast-msg" id="toastMsg"></span></div>
+  <!-- ══ ABOUT ═══════════════════════════════════════════ -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-wrap">
+        <div>
+          <span class="chip" data-k="about_chip">Về Chúng Tôi</span>
+          <h2 class="title"><span data-k="about_t1">Đam Mê Tạo Ra</span><br /><span class="grad" data-k="about_t2">Thế
+              Giới Mới</span></h2>
+          <p class="about-desc" data-k="about_d1">Thành lập năm 2019 tại TP. Hồ Chí Minh, <strong>Zeal Game
+              Studio</strong> là studio game mobile của những người trẻ Việt Nam đầy nhiệt huyết.</p>
+          <p class="about-desc" data-k="about_d2">Với đội ngũ hơn 60 chuyên gia trong lĩnh vực thiết kế, lập trình và âm
+            nhạc, chúng tôi cam kết mang đến những tựa game chất lượng AAA.</p>
+          <div class="pillars">
+            <div class="pillar">
+              <div class="pillar-icon">🎯</div>
+              <div><strong data-k="p1_t">Sứ Mệnh</strong>
+                <p data-k="p1_d">Đưa sản phẩm Việt lên bản đồ thế giới với chất lượng không nhân nhượng.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon">💡</div>
+              <div><strong data-k="p2_t">Tầm Nhìn</strong>
+                <p data-k="p2_d">Trở thành studio game và app mobile hàng đầu Đông Nam Á vào năm 2027.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="float-cards">
+          <div class="fc fc1">
+            <div class="fc-ico">⚙️</div>
+            <div><strong data-k="fc1_t">Game Engine</strong><span>Unity 3D / Unreal</span></div>
+          </div>
+          <div class="fc fc2">
+            <div class="fc-ico">🌍</div>
+            <div><strong data-k="fc2_t">Phát Hành</strong><span>iOS &amp; Android</span></div>
+          </div>
+          <div class="fc fc3">
+            <div class="fc-ico">🏆</div>
+            <div><strong data-k="fc3_t">Top Charts</strong><span>#1 Việt Nam</span></div>
+          </div>
+          <div class="fc-orb"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script src="js/shared.js"></script>
+  <!-- ══ PRODUCTS ═════════════════════════════════════════ -->
+  <section class="section" id="products" style="background:var(--bg2)">
+    <div class="container">
+      <div class="sec-head">
+        <span class="chip" data-k="prod_chip">Sản Phẩm</span>
+        <h2 class="title"><span data-k="prod_t1">Hai Sản Phẩm,</span><br /><span class="grad" data-k="prod_t2">Một Tiêu
+            Chí Đỉnh Cao</span></h2>
+        <p class="desc" data-k="prod_desc">Từ thế giới game RPG hùng tráng đến công cụ tra cứu thẻ bài chuyên nghiệp.
+        </p>
+      </div>
+      <div class="products-wrap">
+        <!-- Zeal Quest -->
+        <div class="pcard" data-app="Zeal Quest">
+          <div class="pcard-top">
+            <div class="pcard-emoji">⚔️</div>
+            <div class="pcard-shine"></div>
+          </div>
+          <div class="pcard-body">
+            <span class="pbadge" data-k="zq_badge">Mobile RPG</span>
+            <h3 data-k="zq_t">Zeal Quest</h3>
+            <p data-k="zq_desc">Bước vào thế giới Aethoria hùng vĩ — chiến đấu với hàng trăm loài quái vật, thu thập
+              trang bị huyền thoại và viết nên câu chuyện của riêng bạn.</p>
+            <div class="pcard-foot">
+              <div class="ptags">
+                <span class="ptag" data-k="zq_t1">RPG</span>
+                <span class="ptag" data-k="zq_t2">Nhập Vai</span>
+                <span class="ptag" data-k="zq_t3">PvP</span>
+              </div>
+              <a href="pages/zeal-quest.html" class="btn btn-p btn-sm" data-k="zq_cta">Xem Chi Tiết</a>
+            </div>
+          </div>
+        </div>
+        <!-- ZealScan -->
+        <div class="pcard gold" data-app="ZealScan">
+          <div class="pcard-top">
+            <div class="pcard-emoji">🔍</div>
+            <div class="pcard-shine"></div>
+          </div>
+          <div class="pcard-body">
+            <span class="pbadge" data-k="zs_badge">Card Scanner</span>
+            <h3 data-k="zs_t">ZealScan</h3>
+            <p data-k="zs_desc">Quét ảnh bất kỳ thẻ Pokémon TCG hoặc OCG — nhận giá thị trường tức thì từ 10+ sàn giao
+              dịch quốc tế. Quản lý bộ sưu tập thẻ bài chuyên nghiệp.</p>
+            <div class="pcard-foot">
+              <div class="ptags">
+                <span class="ptag" data-k="zs_t1">Pokemon TCG</span>
+                <span class="ptag" data-k="zs_t2">OCG</span>
+                <span class="ptag" data-k="zs_t3">Tra Giá</span>
+              </div>
+              <a href="pages/zealscan.html" class="btn btn-g btn-sm" data-k="zs_cta">Xem Chi Tiết</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TEAM ════════════════════════════════════════════ -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="sec-head">
+        <span class="chip" data-k="team_chip">Đội Ngũ</span>
+        <h2 class="title"><span data-k="team_t1">Những Con Người</span><br /><span class="grad" data-k="team_t2">Tạo Ra
+            Huyền Thoại</span></h2>
+      </div>
+      <div class="team-grid">
+        <div class="tcard fade-up" data-d="0">
+          <div class="t-av">NV</div>
+          <h4>Nguyễn Văn An</h4><span class="t-role" data-k="role_ceo">Founder &amp; CEO</span>
+          <p>10+ năm kinh nghiệm trong ngành game, từng làm việc tại Gameloft và VNG.</p>
+        </div>
+        <div class="tcard fade-up" data-d="100">
+          <div class="t-av">TT</div>
+          <h4>Trần Thị Bích</h4><span class="t-role" data-k="role_art">Art Director</span>
+          <p>Thiên tài về concept art, từng cộng tác tại các studio Nhật Bản và Hàn Quốc.</p>
+        </div>
+        <div class="tcard fade-up" data-d="200">
+          <div class="t-av">LM</div>
+          <h4>Lê Minh Khoa</h4><span class="t-role" data-k="role_dev">Lead Developer</span>
+          <p>Chuyên gia Unity &amp; Unreal, kiến trúc sư hệ thống backend quy mô hàng triệu người dùng.</p>
+        </div>
+        <div class="tcard fade-up" data-d="300">
+          <div class="t-av">PH</div>
+          <h4>Phạm Hải Yến</h4><span class="t-role" data-k="role_design">Game Designer</span>
+          <p>Tốt nghiệp xuất sắc tại DigiPen Singapore, thiên tài thiết kế gameplay.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ════════════════════════════════════════ -->
+  <section class="section" id="contact" style="background:var(--bg2)">
+    <div class="container">
+      <div class="sec-head">
+        <span class="chip" data-k="contact_chip">Liên Hệ</span>
+        <h2 class="title"><span data-k="contact_t1">Kết Nối Với</span><br /><span class="grad" data-k="contact_t2">Zeal
+            Game Studio</span></h2>
+        <p class="desc" data-k="contact_desc">Chúng tôi luôn sẵn sàng lắng nghe bạn</p>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <div class="ci-item">
+            <div class="ci-icon">📍</div>
+            <div><strong data-k="ci_addr">Địa Chỉ</strong>
+              <p>123 Đường Nguyễn Huệ, Quận 1, TP. Hồ Chí Minh, Việt Nam</p>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">📧</div>
+            <div><strong data-k="ci_email">Email</strong>
+              <p>hello@zealstudio.vn</p>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">📞</div>
+            <div><strong data-k="ci_phone">Điện Thoại</strong>
+              <p>+84 28 3838 9999</p>
+            </div>
+          </div>
+          <div class="socials">
+            <a href="#" class="soc-btn" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg></a>
+            <a href="#" class="soc-btn" aria-label="YouTube"><svg fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+              </svg></a>
+            <a href="#" class="soc-btn" aria-label="Discord"><svg fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057.1 18.079.11 18.1.127 18.115a19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028 14.09 14.09 0 001.226-1.994.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+              </svg></a>
+          </div>
+        </div>
+        <form class="cf" id="contactForm">
+          <div class="cf-field"><label data-k="f_name">Họ và Tên</label><input type="text" data-kph="f_name_ph"
+              placeholder="Nguyễn Văn A" required /></div>
+          <div class="cf-field"><label data-k="f_email">Email</label><input type="email" data-kph="f_email_ph"
+              placeholder="email@example.com" required /></div>
+          <div class="cf-field">
+            <label data-k="f_subj">Chủ Đề</label>
+            <select>
+              <option data-k="f_subj_ph">Chọn chủ đề...</option>
+              <option data-k="f_o1">Hợp Tác</option>
+              <option data-k="f_o2">Truyền Thông / Báo Chí</option>
+              <option data-k="f_o3">Hỗ Trợ Game</option>
+              <option data-k="f_o4">ZealScan Support</option>
+              <option data-k="f_o5">Tuyển Dụng</option>
+              <option data-k="f_o6">Khác</option>
+            </select>
+          </div>
+          <div class="cf-field"><label data-k="f_msg">Tin Nhắn</label><textarea rows="4" data-kph="f_msg_ph"
+              placeholder="Nội dung tin nhắn..." required></textarea></div>
+          <button type="submit" class="btn btn-p" id="submitBtn" style="width:100%;justify-content:center">
+            <span data-k="f_submit">Gửi Tin Nhắn</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17">
+              <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 19-7z" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo"><img src="assets/zeal_logo.png" alt="" class="logo-img" /><span
+              class="logo-txt">ZEAL<span class="logo-acc">GAME</span></span></div>
+          <p data-k="footer_desc">Chúng tôi tạo ra những trải nghiệm game mobile không thể quên được.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="fcol">
+            <h5 data-k="fc_co">Công Ty</h5>
+            <a href="#about" data-k="f_about">Về Chúng Tôi</a>
+            <a href="#contact" data-k="f_contact">Liên Hệ</a>
+            <a href="#" data-k="f_careers">Tuyển Dụng</a>
+            <a href="#" data-k="f_news">Tin Tức</a>
+          </div>
+          <div class="fcol">
+            <h5 data-k="fc_prod">Sản Phẩm</h5>
+            <a href="pages/zeal-quest.html" data-k="nav_zealquest">Zeal Quest</a>
+            <a href="pages/zealscan.html" data-k="nav_zealscan">ZealScan</a>
+            <a href="#" data-k="f_indev">Đang Phát Triển</a>
+            <a href="#" data-k="f_road">Lộ Trình</a>
+          </div>
+          <div class="fcol">
+            <h5 data-k="fc_legal">Pháp Lý</h5>
+            <a href="#" data-k="f_terms">Điều Khoản</a>
+            <a href="#" data-k="f_privacy">Bảo Mật</a>
+            <a href="#" data-k="f_eula">EULA</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-btm">
+        <span data-k="footer_cr">© 2024 Zeal Game Studio. Tất cả quyền được bảo lưu.</span>
+        <span data-k="footer_made">Made with ❤️ in Việt Nam 🇻🇳</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"><span class="t-icon"></span><span class="toast-msg" id="toastMsg"></span></div>
+
+  <script src="js/shared.js"></script>
 </body>
+
 </html>
